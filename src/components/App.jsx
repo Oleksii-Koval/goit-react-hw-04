@@ -33,6 +33,7 @@ const App = () => {
         setLoading(false);
       }
     }
+
     getData();
   }, [query]);
 
