@@ -1,9 +1,11 @@
+import css from "./SearchBar.module.css";
+import { IoSearchSharp } from "react-icons/io5";
 import toast from "react-hot-toast";
 
 const SearchBar = ({ onSubmit }) => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const form = e.target;
     const search = form.elements.search.value;
     form.reset();
     if (search.trim() === "") {
@@ -13,15 +15,19 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
+    <header className={css.header}>
+      <form className={css.searchBar} onSubmit={handleSearch}>
         <input
-          autoComplete="off"
-          name="search"
+          className={css.input}
           type="text"
+          name="search"
+          autoComplete="off"
+          autoFocus
           placeholder="Search images and photos"
         />
-        <button type="submit">Search</button>
+        <button className={css.searchBtn} type="submit">
+          <IoSearchSharp size={"22px"} />
+        </button>
       </form>
     </header>
   );
