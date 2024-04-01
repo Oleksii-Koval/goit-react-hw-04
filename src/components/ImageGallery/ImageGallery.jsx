@@ -11,13 +11,11 @@ const ImageGallery = ({ images, handleClick }) => {
             handleClick(image);
           }}
         >
-          <ImageCard image={image} />
+          <ImageCard image={image} onClick={handleClick} />
         </li>
       ))}
     </ul>
   );
 };
-
-ImageGallery.displayName = "ImageGallery";
 
 export default ImageGallery;

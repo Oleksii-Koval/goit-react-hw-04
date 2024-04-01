@@ -37,7 +37,7 @@ const App = () => {
         setImages((prevImages) => {
           return [...prevImages, ...data];
         });
-        setShowBtn(totalPages && totalPages !== page);
+        setShowBtn(Boolean(totalPages) && totalPages !== page);
       } catch (e) {
         setError(true);
         setShowBtn(false);
